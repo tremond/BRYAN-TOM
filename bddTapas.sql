@@ -67,7 +67,7 @@ REFERENCES Groupe(idGroupe);
 
 ALTER TABLE Client
 ADD CONSTRAINT ClientGroupe
-FOREIGN KEY (idGroupe)
+FOREIGN KEY (idClient)
 REFERENCES Groupe(idGroupe);
 
 ALTER TABLE ChoixClientTapas

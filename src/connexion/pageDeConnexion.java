@@ -22,7 +22,7 @@ public class pageDeConnexion {
 		    /* Ici, nous placerons nos requêtes vers la BDD */
 		    state = connexion.createStatement();
 		    
-		    ResultSet resultat = state.executeQuery("SELECT * FROM Commande");
+		    ResultSet resultat = state.executeQuery("SELECT * FROM Client");
 		    
 		    ResultSetMetaData resultMeta = resultat.getMetaData();
 		    for (int i = 1; i <= resultMeta.getColumnCount(); i++) {
