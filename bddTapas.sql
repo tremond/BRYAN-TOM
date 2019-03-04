@@ -62,7 +62,7 @@ REFERENCES Commande(idCommande);
 
 ALTER TABLE Commande
 ADD CONSTRAINT CommandeGroupe
-FOREIGN KEY (idGroupe)
+FOREIGN KEY (idCommande)
 REFERENCES Groupe(idGroupe);
 
 ALTER TABLE Client
