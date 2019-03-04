@@ -7,22 +7,21 @@ CREATE TABLE Client (
 
 CREATE TABLE Groupe (
     idGroupe int(11) NOT NULL AUTO_INCREMENT,
-    numTable int(11),
+    numeroTable int(11),
     PRIMARY KEY (idGroupe)
 )   DEFAULT CHARSET=utf8;
 
 CREATE TABLE Commande (
     idCommande int(11) NOT NULL AUTO_INCREMENT,
-    heure VARCHAR(64),
+    dateCommande VARCHAR(64),
     PRIMARY KEY (idCommande)
 )   DEFAULT CHARSET=utf8;
 
-CREATE TABLE CommandeTapas (
-    idCommandeTapas int(11) NOT NULL AUTO_INCREMENT,
-    quantité int(11),
+CREATE TABLE ChoixClient (
+    idChoixClient int(11) NOT NULL AUTO_INCREMENT,
     idClient int(11),
     idCommande int(11),
-    PRIMARY KEY (idCommandeTapas)
+    PRIMARY KEY (idChoixClient)
 )   DEFAULT CHARSET=utf8;
 
 CREATE TABLE Tapas (
