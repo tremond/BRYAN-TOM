@@ -89,8 +89,3 @@ ALTER TABLE CategorieTapas
 ADD CONSTRAINT ChoixTapCat
 FOREIGN KEY (idTapas)
 REFERENCES Tapas(idTapas);
-
-/*ALTER TABLE Exercice   
-ADD CONSTRAINT Exercice_idTP
-FOREIGN KEY (idTP)
-REFERENCES TP(idTP);*/
