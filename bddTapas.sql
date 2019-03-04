@@ -2,6 +2,7 @@ CREATE TABLE Client (
     idClient int(11) NOT NULL AUTO_INCREMENT,
     pseudo VARCHAR(64),
     couleur VARCHAR(64),
+	idGroupe int(11),
     PRIMARY KEY (idClient)
 )   DEFAULT CHARSET=utf8;
 
@@ -14,6 +15,7 @@ CREATE TABLE Groupe (
 CREATE TABLE Commande (
     idCommande int(11) NOT NULL AUTO_INCREMENT,
     dateCommande VARCHAR(64),
+	idGroupe int(11),
     PRIMARY KEY (idCommande)
 )   DEFAULT CHARSET=utf8;
 
@@ -70,7 +72,7 @@ ADD CONSTRAINT ClientGroupe
 FOREIGN KEY (idGroupe)
 REFERENCES Groupe(idGroupe);
 
-ALTER TABLE ChoixClientTapas
+ALTER TABLE ChoixClientTapas 
 ADD CONSTRAINT ChoixCliTap
 FOREIGN KEY (idTapas)
 REFERENCES Tapas(idTapas);
