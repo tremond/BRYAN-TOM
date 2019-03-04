@@ -7,8 +7,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class pageDeConnexion {
-	public static void Connexionbdd() {
+public class Tapas {
+	public static void getCaterogieTapas() {
 		/* Connexion à la base de données */
 		String url = "jdbc:mysql://localhost:3306/tp17tapas";
 		String utilisateur = "root";
@@ -22,7 +22,7 @@ public class pageDeConnexion {
 		    /* Ici, nous placerons nos requêtes vers la BDD */
 		    state = connexion.createStatement();
 		    
-		    ResultSet resultat = state.executeQuery("SELECT * FROM client");
+		    ResultSet resultat = state.executeQuery("SELECT * FROM Categorie");
 		    
 		    ResultSetMetaData resultMeta = resultat.getMetaData();	
 		    while(resultat.next()) {
@@ -44,8 +44,4 @@ public class pageDeConnexion {
 		        }
 		}
 	}
-	
-	public static void main(String[] args) {
-		Connexionbdd();
-	}
-}	
+}

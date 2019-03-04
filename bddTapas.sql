@@ -93,4 +93,11 @@ FOREIGN KEY (idTapas)
 REFERENCES Tapas(idTapas);
 
 
-insert into Client (pseudo, couleur) values ("Fabrice", "rouge");
+insert into Client (pseudo, couleur, idGroupe) values ("Fabrice", "rouge", 1);
+insert into Client (pseudo, couleur, idGroupe) values ("Elliot", "jaune", 1);
+insert into Client (pseudo, couleur, idGroupe) values ("Jean-Patrick", "vert", 2);
+insert into Client (pseudo, couleur, idGroupe) values ("Jean-Phillipe", "orange", 2);
+insert into Client (pseudo, couleur, idGroupe) values ("Jean-pol", "violet", 2);
+
+insert into Groupe (numeroTable) values (1);
+insert into Groupe (numeroTable) values (2);
