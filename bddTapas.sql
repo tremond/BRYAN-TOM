@@ -24,10 +24,24 @@ CREATE TABLE ChoixClient (
     PRIMARY KEY (idChoixClient)
 )   DEFAULT CHARSET=utf8;
 
+CREATE TABLE ChoixClientTapas (
+    idChoixClientTapas int(11) NOT NULL AUTO_INCREMENT,
+    idTapas int(11),
+    idChoixClient int(11),
+    PRIMARY KEY (idChoixClientTapas)
+)   DEFAULT CHARSET=utf8;
+
 CREATE TABLE Tapas (
     idTapas int(11) NOT NULL AUTO_INCREMENT,
     nomTapas VARCHAR(64),
     PRIMARY KEY (idTapas)
+)   DEFAULT CHARSET=utf8;
+
+CREATE TABLE CategorieTapas (
+    idCategorieTapas int(11) NOT NULL AUTO_INCREMENT,
+    idTapas int(11),
+    idCategorie int(11),
+    PRIMARY KEY (idCategorieTapas)
 )   DEFAULT CHARSET=utf8;
 
 CREATE TABLE Categorie (
