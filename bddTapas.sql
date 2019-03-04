@@ -89,3 +89,5 @@ ALTER TABLE CategorieTapas
 ADD CONSTRAINT ChoixTapCat
 FOREIGN KEY (idTapas)
 REFERENCES Tapas(idTapas);
+
+insert into Client (pseudo, couleur) values ("Fabrice", "rouge");
