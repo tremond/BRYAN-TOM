@@ -50,6 +50,46 @@ CREATE TABLE Categorie (
     PRIMARY KEY (idCategorie)
 )   DEFAULT CHARSET=utf8;
 
+ALTER TABLE ChoixClient
+ADD CONSTRAINT ChoixClientClient
+FOREIGN KEY (idClient)
+REFERENCES Client(idClient);
+
+ALTER TABLE ChoixClient
+ADD CONSTRAINT ChoixClientCommande
+FOREIGN KEY (idCommande)
+REFERENCES Commande(idCommande);
+
+ALTER TABLE Commande
+ADD CONSTRAINT CommandeGroupe
+FOREIGN KEY (idGroupe)
+REFERENCES Groupe(idGroupe);
+
+ALTER TABLE Client
+ADD CONSTRAINT ClientGroupe
+FOREIGN KEY (idGroupe)
+REFERENCES Groupe(idGroupe);
+
+ALTER TABLE ChoixClientTapas
+ADD CONSTRAINT ChoixCliTap
+FOREIGN KEY (idTapas)
+REFERENCES Tapas(idTapas);
+
+ALTER TABLE ChoixClientTapas
+ADD CONSTRAINT ChoixTapCli
+FOREIGN KEY (idClient)
+REFERENCES Client(idClient);
+
+ALTER TABLE CategorieTapas
+ADD CONSTRAINT ChoixCatTap
+FOREIGN KEY (idCategorie)
+REFERENCES Categorie(idCategorie);
+
+ALTER TABLE CategorieTapas
+ADD CONSTRAINT ChoixTapCat
+FOREIGN KEY (idTapas)
+REFERENCES Tapas(idTapas);
+
 /*ALTER TABLE Exercice   
 ADD CONSTRAINT Exercice_idTP
 FOREIGN KEY (idTP)
