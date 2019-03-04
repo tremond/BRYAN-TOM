@@ -77,8 +77,8 @@ REFERENCES Tapas(idTapas);
 
 ALTER TABLE ChoixClientTapas
 ADD CONSTRAINT ChoixTapCli
-FOREIGN KEY (idClient)
-REFERENCES Client(idClient);
+FOREIGN KEY (idChoixClient)
+REFERENCES ChoixClient(idChoixClient);
 
 ALTER TABLE CategorieTapas
 ADD CONSTRAINT ChoixCatTap
@@ -89,5 +89,6 @@ ALTER TABLE CategorieTapas
 ADD CONSTRAINT ChoixTapCat
 FOREIGN KEY (idTapas)
 REFERENCES Tapas(idTapas);
+
 
 insert into Client (pseudo, couleur) values ("Fabrice", "rouge");
