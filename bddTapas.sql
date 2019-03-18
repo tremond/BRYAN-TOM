@@ -102,8 +102,8 @@ insert into Client (pseudo, couleur, idGroupe) values ("Jean-pol", "violet", 2);
 insert into Groupe (numeroTable) values (1);
 insert into Groupe (numeroTable) values (2);
 
-insert into Tapas (idTapas, nomTapas) values ("Boeuf", 1);
-insert into Tapas (idTapas, nomTapas) values ("Poisson", 2);
-insert into Tapas (idTapas, nomTapas) values ("Fromage", 3);
-insert into Tapas (idTapas, nomTapas) values ("Mexicain", 4);
-insert into Tapas (idTapas, nomTapas) values ("Schweppes", 5);
+insert into Tapas (idTapas, nomTapas) values (1, "Boeuf");
+insert into Tapas (idTapas, nomTapas) values (2, "Poisson");
+insert into Tapas (idTapas, nomTapas) values (3, "Fromage");
+insert into Tapas (idTapas, nomTapas) values (4, "Mexicain");
+insert into Tapas (idTapas, nomTapas) values (5, "Schweppes");
