@@ -8,25 +8,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import sun.launcher.resources.launcher;
 
 public class pageDeConnexion extends Application {
 	public void start (Stage primaryStage) {
-		BorderPane containerPrincipal = new BorderPane();
-		Scene scene = new Scene(containerPrincipal);
-		primaryStage.setScene(scene);
+		primaryStage.setTitle("Page de Connexion");
 		primaryStage.show();
+		
 	}
-	
 	
 	
 	public static void main(String[] args) {
 		launch(pageDeConnexion.class);
 	}
-
+	
 	public static void Connexionbdd() {
 		/* Connexion à la base de données */
 		String url = "jdbc:mysql://localhost:3306/tp17tapas";
@@ -42,6 +45,7 @@ public class pageDeConnexion extends Application {
 		    state = connexion.createStatement();
 		    
 		    ResultSet resultat = state.executeQuery("SELECT * FROM client");
+		    
 		    
 		    ResultSetMetaData resultMeta = resultat.getMetaData();	
 		    while(resultat.next()) {
