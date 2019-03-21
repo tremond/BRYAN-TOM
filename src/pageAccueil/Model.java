@@ -30,7 +30,6 @@ public class Model {
 		    
 		    ResultSet resultat = state.executeQuery("");
 		    
-		    
 		    ResultSetMetaData resultMeta = resultat.getMetaData();	
 		    while(resultat.next()) {
 		    	for (int i = 1; i <= resultMeta.getColumnCount(); i++) {
