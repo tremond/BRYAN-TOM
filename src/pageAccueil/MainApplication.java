@@ -17,7 +17,6 @@ public class MainApplication extends Application
 		Scene scene = new Scene(vue, Color.WHITE);
 		primaryStage.setTitle("Tapas");
 		primaryStage.setScene(scene);
-		primaryStage.setResizable(false);
 
 		primaryStage.show();
 	}
