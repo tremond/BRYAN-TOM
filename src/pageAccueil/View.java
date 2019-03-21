@@ -30,6 +30,9 @@ public class View extends VBox
 		nbUsers.getChildren().add(nbUsersText);
 		nbUsers.getChildren().add(spinner);
 		this.getChildren().add(nbUsers);
+		
+		VboxUsers = new VBox();
+		
 	}
 	
 	public void init(Model mdl)
