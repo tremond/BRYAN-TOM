@@ -22,25 +22,9 @@ public class View extends VBox
 	{
 		Text testtext = new Text("Ceci n'est pas un macdo");
 		Text nbUsersText = new Text("Nombre de personnes :");
-		Text convive = new Text("Convive n°");
-		TextField name = new TextField();
+
 		this.setStyle("-fx-background-color: #fff;");
 		HBox nbUsers = new HBox();
-		
-		final ColorPicker colorPicker = new ColorPicker();
-        colorPicker.setValue(Color.RED);
- 
-        final Circle circle = new Circle(50);
-        circle.setFill(colorPicker.getValue());
- 
-        colorPicker.setOnAction(new EventHandler<ActionEvent>() {
-        	
-        	@Override
-            public void handle(ActionEvent event) {
-                circle.setFill(colorPicker.getValue());
-            }
-        });
-		
 		
 		Title = new HBox();
 		Title.getChildren().add(testtext);
@@ -59,6 +43,21 @@ public class View extends VBox
              @Override
              public void increment(int steps) {
 	            	 HBox users = new HBox();
+	            	 final ColorPicker colorPicker = new ColorPicker();
+	                 colorPicker.setValue(Color.RED);
+	          
+	                 final Circle circle = new Circle(50);
+	                 circle.setFill(colorPicker.getValue());
+	          
+	                 colorPicker.setOnAction(new EventHandler<ActionEvent>() {
+	                 	
+	                 	@Override
+	                     public void handle(ActionEvent event) {
+	                         circle.setFill(colorPicker.getValue());
+	                     }
+	                 });
+	         		Text convive = new Text("Entrez votre nom : ");
+	        		TextField name = new TextField();
 	            	 users.getChildren().add(convive);
 	            	 users.getChildren().add(name);
 	            	 users.getChildren().add(circle);
