@@ -1,7 +1,9 @@
 package pageAccueil;
 
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pagePrincipale.ViewPrincipale;
 
 public class WindowSwitcher {
 	
@@ -13,7 +15,7 @@ public class WindowSwitcher {
 	
 	public static void SwitchFenetre(String nomPage) {
 		if (nomPage == "pageAcceuil") {
-			View vueAcceuil = new View();
+			ViewAcceuil vueAcceuil = new ViewAcceuil();
 			vueAcceuil.init(new Model());
 			
 			Scene scene = new Scene(vueAcceuil, 800, 600);
@@ -21,7 +23,7 @@ public class WindowSwitcher {
 		}
 		
 		if (nomPage == "pagePrincipale") {
-			View vuePrincipale = new View();
+			ViewPrincipale vuePrincipale = new ViewPrincipale();
 			vuePrincipale.init(new Model());
 			
 			Scene scene1 = new Scene(vuePrincipale, 800, 600);

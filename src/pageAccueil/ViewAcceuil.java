@@ -10,21 +10,19 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-import com.sun.java.swing.plaf.windows.resources.windows;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class View extends VBox
+public class ViewAcceuil extends VBox
 {
 	private Model _model;
 	private VBox vboxUsers;
 	private HBox Title;
 	private Button buttonScene;
  
-	public View()
+	public ViewAcceuil()
 	{
 		Text testtext = new Text("Ceci n'est pas un macdo");
 		Text nbUsersText = new Text("Nombre de personnes :");
@@ -45,7 +43,7 @@ public class View extends VBox
 
 		@Override
 		public void handle(ActionEvent arg0) {
-			WindowSwitcher.SwitchFenetre("pagePrincipalepagePrincipalepagePrincipale");
+			WindowSwitcher.SwitchFenetre("pagePrincipale");
 			}
 		});
 		

@@ -6,7 +6,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import pageAccueil.Model;
 
-public class View extends GridPane {
+public class ViewPrincipale extends GridPane {
 	
 	private Model _model;
 	
@@ -15,7 +15,7 @@ public class View extends GridPane {
 		_model = mdl;
 	}
 	
-	public View() {
+	public ViewPrincipale() {
 		Text title = new Text("Historique de commandes");
 		Tab tab1 = new Tab("Onglet 1");
 		Tab tab2 = new Tab("Onglet 2");
