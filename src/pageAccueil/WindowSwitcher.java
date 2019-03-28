@@ -20,9 +20,12 @@ public class WindowSwitcher {
 			_stage.setScene(scene);
 		}
 		
-		else if(nomPage == "pagePrincipale") {
-			/*View vuePrincipale = new View();
-			vuePrincipale.init(new Model());*/
+		if (nomPage == "pagePrincipale") {
+			View vuePrincipale = new View();
+			vuePrincipale.init(new Model());
+			
+			Scene scene1 = new Scene(vuePrincipale, 800, 600);
+			_stage.setScene(scene1);
 		}
 	}
 }
