@@ -21,12 +21,12 @@ public class ViewAcceuil extends VBox
 	private VBox vboxUsers;
 	private HBox Title;
 	private Button buttonScene;
+	private Button valideCommande;
  
 	public ViewAcceuil()
 	{
 		Text testtext = new Text("Ceci n'est pas un macdo");
 		Text nbUsersText = new Text("Nombre de personnes :");
-		Button valideCommande = new Button("Valider");
 
 		this.setStyle("-fx-background-color: #fff;");
 		HBox nbUsers = new HBox();
@@ -90,13 +90,26 @@ public class ViewAcceuil extends VBox
 		final ColorPicker colorPicker = new ColorPicker();
         colorPicker.setValue(Color.RED);
 		Text convive = new Text("Entrez votre nom : ");
- 		TextField name = new TextField();
  		
     	users.getChildren().add(convive);
-    	users.getChildren().add(name);
+    	users.getChildren().add(getName());
     	users.getChildren().add(colorPicker);
     	vboxUsers.getChildren().add(users);
 	}
 	
-	
+	public HBox getName()
+	{
+		HBox hbox = new HBox();
+		TextField name = new TextField();
+    	
+    	valideCommande = new Button("Valider");
+    	valideCommande.setOnAction(new EventHandler<ActionEvent>() {
+    		@Override
+    		public void handle(ActionEvent arg0) {
+    			System.out.println(name.getText());
+    		}
+    	});
+    	hbox.getChildren().add(name);
+    	return hbox;
+	}
 }
