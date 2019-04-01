@@ -20,7 +20,6 @@ public class ViewAcceuil extends VBox
 	private Model _model;
 	private VBox vboxUsers;
 	private HBox Title;
-	private Button buttonScene;
 	private Button valideCommande;
  
 	public ViewAcceuil()
@@ -96,7 +95,7 @@ public class ViewAcceuil extends VBox
 	{
 		HBox hbox = new HBox();
 		TextField name = new TextField();
-    	
+		
     	valideCommande = new Button("Valider");
     	valideCommande.setOnAction(new EventHandler<ActionEvent>() {
     		@Override
@@ -107,4 +106,12 @@ public class ViewAcceuil extends VBox
     	hbox.getChildren().add(name);
     	return hbox;
 	}
+	
+	/*public void validationClient() {
+		for (int i = 0; i < vboxUsers.getChildren().size() ; i++ ) {
+			HBox hbox = (HBox)hbox.getChildren().get(i);
+			TextField name = (TextField)name.getChildren().get(1); 
+			String nom = name.getText();
+		}
+	}*/
 }

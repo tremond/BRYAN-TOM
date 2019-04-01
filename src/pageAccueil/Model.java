@@ -26,6 +26,7 @@ public class Model {
 		    connexion = DriverManager.getConnection( url, utilisateur, motDePasse );
 	
 		    /* Ici, nous placerons nos requêtes vers la BDD */
+		    
 		    state = connexion.createStatement();
 		    
 		    ResultSet resultat = state.executeQuery("");
