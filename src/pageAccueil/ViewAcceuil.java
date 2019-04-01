@@ -20,13 +20,18 @@ public class ViewAcceuil extends VBox
 	private Model _model;
 	private VBox vboxUsers;
 	private HBox Title;
-	private Button buttonScene;
  
 	public ViewAcceuil()
 	{
 		Text testtext = new Text("Ceci n'est pas un macdo");
 		Text nbUsersText = new Text("Nombre de personnes :");
 		Button valideCommande = new Button("Valider");
+		
+		valideCommande.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent arg0) {
+				WindowSwitcher.SwitchFenetre("pagePrincipale");
+			}
+		});
 
 		this.setStyle("-fx-background-color: #fff;");
 		HBox nbUsers = new HBox();
@@ -37,15 +42,6 @@ public class ViewAcceuil extends VBox
 		this.getChildren().add(Title);
 		
 		vboxUsers = new VBox();
-		
-		buttonScene = new Button("click");
-		buttonScene.setOnAction(new EventHandler<ActionEvent>() {
-
-		@Override
-		public void handle(ActionEvent arg0) {
-			WindowSwitcher.SwitchFenetre("pagePrincipale");
-			}
-		});
 		
 		final Spinner<Integer> spinner = new Spinner<Integer>();
 		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4, 1);
@@ -68,14 +64,11 @@ public class ViewAcceuil extends VBox
 			}
         });
         
-      
-	
 		nbUsers.getChildren().add(nbUsersText);
 		nbUsers.getChildren().add(spinner);
 		this.getChildren().add(nbUsers);
 		this.getChildren().add(vboxUsers);
 		this.getChildren().add(valideCommande);
-		this.getChildren().add(buttonScene);
 		
 	}
 	
@@ -97,6 +90,4 @@ public class ViewAcceuil extends VBox
     	users.getChildren().add(colorPicker);
     	vboxUsers.getChildren().add(users);
 	}
-	
-	
 }
