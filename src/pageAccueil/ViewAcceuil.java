@@ -10,6 +10,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
+import com.sun.xml.internal.bind.v2.runtime.Name;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -27,12 +29,6 @@ public class ViewAcceuil extends VBox
 		Text testtext = new Text("Ceci n'est pas un macdo");
 		Text nbUsersText = new Text("Nombre de personnes :");
 		Button valideCommande = new Button("Valider");
-		
-		valideCommande.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent arg0) {
-				WindowSwitcher.SwitchFenetre("pagePrincipale");
-			}
-		});
 
 		this.setStyle("-fx-background-color: #fff;");
 		HBox nbUsers = new HBox();
@@ -49,7 +45,7 @@ public class ViewAcceuil extends VBox
 		spinner.setValueFactory(valueFactory);
 		createConvive();
 		
-		 // When spinner change value.
+		// When spinner change value.
         spinner.valueProperty().addListener(new ChangeListener<Integer>() {
  
 			@Override
@@ -64,6 +60,15 @@ public class ViewAcceuil extends VBox
 				}
 			}
         });
+        
+        valideCommande = new Button("Valider");
+    	valideCommande.setOnAction(new EventHandler<ActionEvent>() {
+    		@Override
+    		public void handle(ActionEvent arg0) {
+    			validationClient();
+    			WindowSwitcher.SwitchFenetre("pagePrincipale");
+    		}
+    	});
         
 		nbUsers.getChildren().add(nbUsersText);
 		nbUsers.getChildren().add(spinner);
@@ -84,34 +89,35 @@ public class ViewAcceuil extends VBox
 		final ColorPicker colorPicker = new ColorPicker();
         colorPicker.setValue(Color.RED);
 		Text convive = new Text("Entrez votre nom : ");
+		TextField name = new TextField();
  		
     	users.getChildren().add(convive);
-    	users.getChildren().add(getName());
+    	users.getChildren().add(name);
     	users.getChildren().add(colorPicker);
     	vboxUsers.getChildren().add(users);
 	}
 	
-	public HBox getName()
-	{
-		HBox hbox = new HBox();
-		TextField name = new TextField();
-		
-    	valideCommande = new Button("Valider");
-    	valideCommande.setOnAction(new EventHandler<ActionEvent>() {
-    		@Override
-    		public void handle(ActionEvent arg0) {
-    			System.out.println(name.getText());
-    		}
-    	});
-    	hbox.getChildren().add(name);
-    	return hbox;
-	}
-	
-	/*public void validationClient() {
-		for (int i = 0; i < vboxUsers.getChildren().size() ; i++ ) {
-			HBox hbox = (HBox)hbox.getChildren().get(i);
-			TextField name = (TextField)name.getChildren().get(1); 
-			String nom = name.getText();
+	public void validationClient() {
+		for (int i = 0; i < vboxUsers.getChildren().size(); i++ ) {
+			
+			HBox ligne = (HBox)vboxUsers.getChildren().get(i);
+			TextField nom = (TextField)ligne.getChildren().get(1);
+			String nomClient = nom.getText();
+			
+			ColorPicker choixCouleur = (ColorPicker) ligne.getChildren().get(2);
+			String couleurClient = Integer.toHexString(choixCouleur.getValue().hashCode());
+			
+			System.out.println(couleurClient);
+			
+			if(nomClient.equals("")) {
+				valideCommande.isDisable();
+			}
+			
+			else if (nomClient.matches("^[a-zA-Z]+$")) {
+				for (int j = 0; j < vboxUsers.getChildren().size(); j++) {
+					
+				}
+			}
 		}
-	}*/
+	}
 }
