@@ -15,19 +15,11 @@ public class Model {
 	
 	public static void Connexionbdd() {
 		/* Connexion à la base de données */
-		String url = "jdbc:mysql://localhost:3306/tp17tapas";
-		String utilisateur = "root";
-		String motDePasse = "";
-		Connection connexion = null;
-		Statement state = null;
+		Statement state;
 		
 		try {
-			
-		    connexion = DriverManager.getConnection( url, utilisateur, motDePasse );
-	
+			state = Connection getConnexion().createStatement;
 		    /* Ici, nous placerons nos requêtes vers la BDD */
-		    
-		    state = connexion.createStatement();
 		    
 		    ResultSet resultat = state.executeQuery("");
 		    

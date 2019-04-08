@@ -114,9 +114,6 @@ public class ViewAcceuil extends VBox
 			}
 			
 			else if (nomClient.matches("^[a-zA-Z]+$")) {
-				for (int j = 0; j < vboxUsers.getChildren().size(); j++) {
-					
-				}
 			}
 		}
 	}
