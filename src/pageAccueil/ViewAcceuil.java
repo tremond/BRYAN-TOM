@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import metier.Client;
 
 import com.sun.xml.internal.bind.v2.runtime.Name;
 
@@ -66,6 +67,7 @@ public class ViewAcceuil extends VBox
     		@Override
     		public void handle(ActionEvent arg0) {
     			validationClient();
+  
     			WindowSwitcher.SwitchFenetre("pagePrincipale");
     		}
     	});
@@ -107,13 +109,12 @@ public class ViewAcceuil extends VBox
 			ColorPicker choixCouleur = (ColorPicker) ligne.getChildren().get(2);
 			String couleurClient = Integer.toHexString(choixCouleur.getValue().hashCode());
 			
-			System.out.println(couleurClient);
-			
 			if(nomClient.equals("")) {
 				valideCommande.isDisable();
 			}
 			
 			else if (nomClient.matches("^[a-zA-Z]+$")) {
+			
 			}
 		}
 	}

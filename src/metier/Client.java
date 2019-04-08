@@ -1,11 +1,9 @@
 package metier;
 
-import java.sql.Connection;
 import java.sql.Statement;
-import java.sql.DriverManager;
+import tools.ConnexionBdd;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
 
 public class Client {
 	
@@ -52,7 +50,7 @@ public class Client {
 		Statement state;
 		
 		try {
-			state = Connection.getConnexion().createStatement();
+			state = ConnexionBdd.getConnexion().createStatement();
 			ResultSet resultat = state.executeQuery("SELECT * FROM Client WHERE client.idClient =" + idClient); 
 			
 			ResultSetMetaData resultMeta = resultat.getMetaData();
@@ -66,16 +64,19 @@ public class Client {
 		    	}
 		    }
 			resultat.close();
-		} 
-		
-		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	//si l'id client = 0 ,insert tous les attributs dans la table
 	// si l'id client != 0 ,update
 	public void saveclient(int idClient) {
+		Statement state;
 		
-		
+		try {
+			
+		}
 	}
 
 }
