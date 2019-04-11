@@ -1,48 +1,8 @@
 package pageAccueil;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 public class Model {
 	
 	public Model() {
 		
 	}
-	
-	public static void Connexionbdd() {
-		/* Connexion à la base de données */
-		Statement state;
-		
-		try {
-			state = Connection getConnexion().createStatement;
-		    /* Ici, nous placerons nos requêtes vers la BDD */
-		    
-		    ResultSet resultat = state.executeQuery("");
-		    
-		    ResultSetMetaData resultMeta = resultat.getMetaData();	
-		    while(resultat.next()) {
-		    	for (int i = 1; i <= resultMeta.getColumnCount(); i++) {
-		    		System.out.println(resultat.getObject(i).toString());
-		    	}
-		    }
-		    resultat.close();
-	
-		} catch ( SQLException e ) {
-		    /* Gérer les éventuelles erreurs ici */
-		} finally {
-		    if ( connexion != null )
-		        try {
-		            /* Fermeture de la connexion */
-		            connexion.close();
-		        } catch ( SQLException ignore ) {
-		            /* Si une erreur survient lors de la fermeture, il suffit de l'ignorer. */
-		        }
-		}
-	}
-	
-	
 }

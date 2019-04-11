@@ -23,7 +23,7 @@ public class ViewAcceuil extends VBox
 	private Model _model;
 	private VBox vboxUsers;
 	private HBox Title;
-	private Button valideCommande;
+	private Button valideCommande; 
  
 	public ViewAcceuil()
 	{
@@ -66,8 +66,8 @@ public class ViewAcceuil extends VBox
     	valideCommande.setOnAction(new EventHandler<ActionEvent>() {
     		@Override
     		public void handle(ActionEvent arg0) {
-    			validationClient();
-  
+    			validationClient(); 
+    			Client.fillClient(1);
     			WindowSwitcher.SwitchFenetre("pagePrincipale");
     		}
     	});

@@ -12,7 +12,6 @@ public class Client {
 	private String _couleur;
 	private int _idGroupe;
 	
-	
 	public int get_idGroupe() {
 		return _idGroupe;
 	}
@@ -46,7 +45,8 @@ public class Client {
 	}
 	
 	// récupérer champs et les mettre en attributs
-	public void fillClient(int idClient) {
+	
+	public static void fillClient(int idClient) {
 		Statement state;
 		
 		try {
@@ -67,16 +67,16 @@ public class Client {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	} 
 
 	//si l'id client = 0 ,insert tous les attributs dans la table
 	// si l'id client != 0 ,update
-	public void saveclient(int idClient) {
+	/*public void saveclient(int idClient) {
 		Statement state;
 		
 		try {
 			
 		}
-	}
+	}*/
 
 }
