@@ -14,7 +14,7 @@ CREATE TABLE Groupe (
 
 CREATE TABLE Commande (
     idCommande int(11) NOT NULL AUTO_INCREMENT,
-    dateCommande VARCHAR(64),
+    heureCommande TIME,
 	idGroupe int(11),
     PRIMARY KEY (idCommande)
 )   DEFAULT CHARSET=utf8;
@@ -36,6 +36,7 @@ CREATE TABLE ChoixClientTapas (
 CREATE TABLE Tapas (
     idTapas int(11) NOT NULL AUTO_INCREMENT,
     nomTapas VARCHAR(64),
+	idCategorie int(11),
     PRIMARY KEY (idTapas)
 )   DEFAULT CHARSET=utf8;
 
@@ -92,6 +93,10 @@ ADD CONSTRAINT ChoixTapCat
 FOREIGN KEY (idTapas)
 REFERENCES Tapas(idTapas);
 
+ALTER TABLE Tapas
+ADD CONSTRAINT TapasCategorie
+FOREIGN KEY (idCategorie)
+REFERENCES Categorie(idCategorie);
 
 insert into Client (pseudo, couleur, idGroupe) values ("Fabrice", "rouge", 1);
 insert into Client (pseudo, couleur, idGroupe) values ("Elliot", "jaune", 1);
@@ -102,8 +107,11 @@ insert into Client (pseudo, couleur, idGroupe) values ("Jean-pol", "violet", 2);
 insert into Groupe (numeroTable) values (1);
 insert into Groupe (numeroTable) values (2);
 
-insert into Tapas (idTapas, nomTapas) values (1, "Boeuf");
-insert into Tapas (idTapas, nomTapas) values (2, "Poisson");
-insert into Tapas (idTapas, nomTapas) values (3, "Fromage");
-insert into Tapas (idTapas, nomTapas) values (4, "Mexicain");
-insert into Tapas (idTapas, nomTapas) values (5, "Schweppes");
+insert into Tapas (idTapas, nomTapas, idCategorie) values (1, "Boeuf", 1);
+insert into Tapas (idTapas, nomTapas, idCategorie) values (2, "Poisson", 1);
+insert into Tapas (idTapas, nomTapas, idCategorie) values (3, "Fromage", 1);
+insert into Tapas (idTapas, nomTapas, idCategorie) values (4, "Mexicain", 1);
+insert into Tapas (idTapas, nomTapas, idCategorie) values (5, "Schweppes", 2);
+
+insert into Categorie (idCategorie, libelle) values (1, "Nourriture");
+insert into Categorie (idCategorie, libelle) values (2, "Boisson");
