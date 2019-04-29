@@ -1,6 +1,5 @@
 package pageAccueil;
 
-
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pagePrincipale.ViewPrincipale;

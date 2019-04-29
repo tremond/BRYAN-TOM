@@ -51,6 +51,7 @@ public class Client {
 		
 		try {
 			state = ConnexionBdd.getConnexion().createStatement();
+			
 			ResultSet resultat = state.executeQuery("SELECT * FROM Client WHERE client.idClient =" + idClient); 
 			
 			ResultSetMetaData resultMeta = resultat.getMetaData();
