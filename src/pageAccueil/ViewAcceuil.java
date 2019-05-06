@@ -66,9 +66,11 @@ public class ViewAcceuil extends VBox
     	valideCommande.setOnAction(new EventHandler<ActionEvent>() {
     		@Override
     		public void handle(ActionEvent arg0) {
-    			validationClient(); 
-    			Client.fillClient(1);
-    			WindowSwitcher.SwitchFenetre("pagePrincipale");
+    			validationClient();
+    			/*je sais pas trop quoi mettre en id ici
+    			Client.fillClient(0);
+    			WindowSwitcher.SwitchFenetre("pagePrincipale");*/
+    			
     		}
     	});
         
@@ -89,13 +91,14 @@ public class ViewAcceuil extends VBox
 	{
 		HBox users = new HBox();
 		final ColorPicker colorPicker = new ColorPicker();
-        colorPicker.setValue(Color.RED);
+		
 		Text convive = new Text("Entrez votre nom : ");
 		TextField name = new TextField();
  		
     	users.getChildren().add(convive);
     	users.getChildren().add(name);
     	users.getChildren().add(colorPicker);
+    	System.out.println(colorPicker.getValue());
     	vboxUsers.getChildren().add(users);
 	}
 	
@@ -109,13 +112,10 @@ public class ViewAcceuil extends VBox
 			ColorPicker choixCouleur = (ColorPicker) ligne.getChildren().get(2);
 			String couleurClient = Integer.toHexString(choixCouleur.getValue().hashCode());
 			
-			if(nomClient.equals("")) {
-				valideCommande.isDisable();
-			}
+			System.out.println(nomClient);
+			System.out.println(couleurClient);
 			
-			else if (nomClient.matches("^[a-zA-Z]+$")) {
 			
-			}
 		}
 	}
 }

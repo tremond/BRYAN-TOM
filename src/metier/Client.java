@@ -69,7 +69,19 @@ public class Client {
 			e.printStackTrace();
 		}
 	} 
-
+	
+	public void save() {
+		Statement state;
+		if ( get_idClient() == 0 ) {
+			try {
+				state = ConnexionBdd.getConnexion().createStatement();
+				state.executeUpdate("INSERT INTO client(idClient, pseudo, couleur, idGroupe) VALUES (" + get_idClient() + ",'" + get_nom() + "','" + getCouleur() + "'," + get_idGroupe() + ")");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
 	//si l'id client = 0 ,insert tous les attributs dans la table
 	// si l'id client != 0 ,update
 	/*public void saveclient(int idClient) {
