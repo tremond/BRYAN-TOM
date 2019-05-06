@@ -19,5 +19,6 @@ public class VueHistorique extends ScrollPane
 		}
 		Text title = new Text("Historique de commandes");
 		
+		
 	}	
 }
