@@ -1,4 +1,4 @@
-	package connexion;
+package connexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,7 +34,7 @@ public class pageDeConnexion extends Application {
 		/* Connexion à la base de données */
 		String url = "jdbc:mysql://localhost:3306/tp17tapas";
 		String utilisateur = "root";
-		String motDePasse = "";
+		String motDePasse = "root";
 		Connection connexion = null;
 		Statement state = null;
 		try {

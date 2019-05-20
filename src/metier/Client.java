@@ -80,13 +80,19 @@ public class Client {
 				e.printStackTrace();
 			}
 		}
+		/*else {
+			try {
+				state = ConnexionBdd.getConnexion().createStatement();
+				//FAIRE REQUETE UPDATE
+				//state.executeUpdate("UPDATE client SET (idClient, pseudo, couleur, idGroupe) VALUES (\" + get_idClient() + \",'\" + get_nom() + \"','\" + getCouleur() + \"',\" + get_idGroupe() + \")")
+			}
+		}*/
 		
 	}
 	//si l'id client = 0 ,insert tous les attributs dans la table
 	// si l'id client != 0 ,update
 	/*public void saveclient(int idClient) {
-		Statement state;
-		
+	 
 		try {
 			
 		}

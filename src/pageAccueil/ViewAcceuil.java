@@ -67,9 +67,7 @@ public class ViewAcceuil extends VBox
     		@Override
     		public void handle(ActionEvent arg0) {
     			validationClient();
-    			/*je sais pas trop quoi mettre en id ici
-    			Client.fillClient(0);
-    			WindowSwitcher.SwitchFenetre("pagePrincipale");*/
+    			//WindowSwitcher.SwitchFenetre("pagePrincipale");
     			
     		}
     	});
@@ -114,8 +112,6 @@ public class ViewAcceuil extends VBox
 			
 			System.out.println(nomClient);
 			System.out.println(couleurClient);
-			
-			
 		}
 	}
 }
