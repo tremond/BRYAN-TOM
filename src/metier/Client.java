@@ -7,12 +7,12 @@ import java.sql.ResultSetMetaData;
 
 public class Client {
 	
-	private int _idClient;
-	private String _nom;
-	private String _couleur;
-	private int _idGroupe;
+	private static int _idClient;
+	private static String _nom;
+	private static String _couleur;
+	private static int _idGroupe;
 	
-	public int get_idGroupe() {
+	public static int get_idGroupe() {
 		return _idGroupe;
 	}
 
@@ -20,7 +20,7 @@ public class Client {
 		this._idGroupe = _idGroupe;
 	}
 
-	public String get_nom() {
+	public static String get_nom() {
 		return _nom;
 	}
 
@@ -28,7 +28,7 @@ public class Client {
 		this._nom = _nom;
 	}
 
-	public String getCouleur() {
+	public static String getCouleur() {
 		return _couleur;
 	}
 
@@ -36,7 +36,7 @@ public class Client {
 		this._couleur = couleur;
 	}
 
-	public int get_idClient() {
+	public static int get_idClient() {
 		return _idClient;
 	}
 
@@ -70,23 +70,25 @@ public class Client {
 		}
 	} 
 	
-	public void save() {
+	public static void save() {
 		Statement state;
 		if ( get_idClient() == 0 ) {
 			try {
 				state = ConnexionBdd.getConnexion().createStatement();
-				state.executeUpdate("INSERT INTO client(idClient, pseudo, couleur, idGroupe) VALUES (" + get_idClient() + ",'" + get_nom() + "','" + getCouleur() + "'," + get_idGroupe() + ")");
+				state.executeUpdate("INSERT INTO Client(idClient, pseudo, couleur, idGroupe) VALUES (" + get_idClient() + ",'" + get_nom() + "','" + getCouleur() + "'," + get_idGroupe() + ")");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		/*else {
+		else {
 			try {
 				state = ConnexionBdd.getConnexion().createStatement();
 				//FAIRE REQUETE UPDATE
-				//state.executeUpdate("UPDATE client SET (idClient, pseudo, couleur, idGroupe) VALUES (\" + get_idClient() + \",'\" + get_nom() + \"','\" + getCouleur() + \"',\" + get_idGroupe() + \")")
+				state.executeUpdate("UPDATE Client SET client.pseudo = " + get_nom() + ", client.couleur = " + getCouleur() + "  WHERE client.idClient = " + get_idClient());
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		}*/
+		}
 		
 	}
 	//si l'id client = 0 ,insert tous les attributs dans la table

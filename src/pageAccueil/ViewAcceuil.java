@@ -13,6 +13,7 @@ import metier.Client;
 
 import com.sun.xml.internal.bind.v2.runtime.Name;
 
+import connexion.pageDeConnexion;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -67,7 +68,8 @@ public class ViewAcceuil extends VBox
     		@Override
     		public void handle(ActionEvent arg0) {
     			validationClient();
-    			//WindowSwitcher.SwitchFenetre("pagePrincipale");
+    			Client.save();
+       			//WindowSwitcher.SwitchFenetre("pagePrincipale");
     			
     		}
     	});
