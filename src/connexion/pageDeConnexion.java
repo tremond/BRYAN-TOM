@@ -22,9 +22,7 @@ public class pageDeConnexion extends Application {
 	public void start (Stage primaryStage) {
 		primaryStage.setTitle("Page de Connexion");
 		primaryStage.show();
-		
 	}
-	
 	
 	public static void main(String[] args) {
 		launch(pageDeConnexion.class);
@@ -43,18 +41,7 @@ public class pageDeConnexion extends Application {
 	
 		    /* Ici, nous placerons nos requêtes vers la BDD */
 		    state = connexion.createStatement();
-		    
-		    ResultSet resultat = state.executeQuery("SELECT * FROM client");
-		    
-		    
-		    ResultSetMetaData resultMeta = resultat.getMetaData();	
-		    while(resultat.next()) {
-		    	for (int i = 1; i <= resultMeta.getColumnCount(); i++) {
-		    		System.out.println(resultat.getObject(i).toString());
-		    	}
-		    }
-		    resultat.close();
-	
+		   
 		} catch ( SQLException e ) {
 		    /* Gérer les éventuelles erreurs ici */
 		} finally {
