@@ -7,12 +7,12 @@ import java.sql.ResultSetMetaData;
 
 public class Client {
 	
-	private static int _idClient;
-	private static String _nom;
-	private static String _couleur;
-	private static int _idGroupe;
+	private int _idClient;
+	private String _nom;
+	private String _couleur;
+	private int _idGroupe;
 	
-	public static int get_idGroupe() {
+	public int get_idGroupe() {
 		return _idGroupe;
 	}
 
@@ -20,7 +20,7 @@ public class Client {
 		this._idGroupe = _idGroupe;
 	}
 
-	public static String get_nom() {
+	public String get_nom() {
 		return _nom;
 	}
 
@@ -28,7 +28,7 @@ public class Client {
 		this._nom = _nom;
 	}
 
-	public static String getCouleur() {
+	public String getCouleur() {
 		return _couleur;
 	}
 
@@ -36,7 +36,7 @@ public class Client {
 		this._couleur = couleur;
 	}
 
-	public static int get_idClient() {
+	public int get_idClient() {
 		return _idClient;
 	}
 
@@ -46,7 +46,7 @@ public class Client {
 	
 	// récupérer champs et les mettre en attributs
 	
-	public static void fillClient(int idClient) {
+	public void fillClient(int idClient) {
 		Statement state;
 		
 		try {
@@ -70,12 +70,12 @@ public class Client {
 		}
 	} 
 	
-	public static void save() {
+	public void save() {
 		Statement state;
 		if ( get_idClient() == 0 ) {
 			try {
 				state = ConnexionBdd.getConnexion().createStatement();
-				state.executeUpdate("INSERT INTO Client(idClient, pseudo, couleur, idGroupe) VALUES (" + get_idClient() + ",'" + get_nom() + "','" + getCouleur() + "'," + get_idGroupe() + ")");
+				state.executeUpdate("INSERT INTO Client(idClient, pseudo, couleur, idGroupe) VALUES (" + this._idClient + ",'" + this._nom + "','" + this._couleur + "'," + this._idGroupe + ")");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -93,11 +93,4 @@ public class Client {
 	}
 	//si l'id client = 0 ,insert tous les attributs dans la table
 	// si l'id client != 0 ,update
-	/*public void saveclient(int idClient) {
-	 
-		try {
-			
-		}
-	}*/
-
 }

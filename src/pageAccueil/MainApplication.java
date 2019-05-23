@@ -2,6 +2,8 @@ package pageAccueil;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import metier.Client;
+import session.SessionManager;
 
 public class MainApplication extends Application
 {

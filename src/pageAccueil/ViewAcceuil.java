@@ -68,7 +68,7 @@ public class ViewAcceuil extends VBox
     		@Override
     		public void handle(ActionEvent arg0) {
     			validationClient();
-    			Client.save();
+    			
        			//WindowSwitcher.SwitchFenetre("pagePrincipale");
     			
     		}
@@ -82,13 +82,13 @@ public class ViewAcceuil extends VBox
 		
 	}
 	
-	public void init(Model mdl)
-	{
+	public void init(Model mdl) {
 		_model = mdl;
 	}
 	
 	public void createConvive()
 	{
+		
 		HBox users = new HBox();
 		final ColorPicker colorPicker = new ColorPicker();
 		
@@ -114,6 +114,11 @@ public class ViewAcceuil extends VBox
 			
 			System.out.println(nomClient);
 			System.out.println(couleurClient);
+			
+			Client test = new Client();
+	    	test.set_nom(nomClient);
+	    	test.setCouleur(couleurClient);
+	    	test.save();	
 		}
 	}
 }
